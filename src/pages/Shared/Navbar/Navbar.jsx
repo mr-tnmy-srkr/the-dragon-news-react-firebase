@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import userDefaultPic from "../../../assets/images/user.png"
+import userDefaultPic from "../../../assets/images/user.png";
 
 const Navbar = () => {
   const navLinks = (
@@ -54,7 +54,7 @@ const Navbar = () => {
             </div>
           </label>
           <Link>
-            <button className="btn btn-neutral  ml-3 px-10">Login</button>
+            <button className="btn btn-neutral ml-3 px-10">Login</button>
           </Link>
         </div>
       </div>
