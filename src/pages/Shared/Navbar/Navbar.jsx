@@ -38,14 +38,14 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"
             >
               {navLinks}
             </ul>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          <ul className="menu menu-horizontal px-1 font-bold">{navLinks}</ul>
         </div>
         <div className="navbar-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -54,7 +54,7 @@ const Navbar = () => {
             </div>
           </label>
           <Link>
-            <button className="btn btn-neutral ml-3 px-10">Login</button>
+            <button className="btn btn-neutral ml-3 px-10 capitalize">Login</button>
           </Link>
         </div>
       </div>
