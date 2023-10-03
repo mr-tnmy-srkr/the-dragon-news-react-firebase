@@ -1,5 +1,7 @@
 import { FaGoogle,FaGithub, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-
+import qZone1 from '../../../assets/images/qZone1.png'
+import qZone2 from '../../../assets/images/qZone2.png'
+import qZone3 from '../../../assets/images/qZone3.png'
 
 
 const RightSideNav = () => {
@@ -37,6 +39,23 @@ const RightSideNav = () => {
         </a>
         </div>
       </div>
+
+      {/* q-zone */}
+      <div className="p-4 space-y-3 mb-6">
+        <h2 className="text-2xl font-medium">Q-zone</h2>
+      <div className='bg-[#F3F3F3]'>
+      <div className=''>
+      <img className='w-full' src={qZone1} alt="" />
+      </div>
+      <div className=''>
+       <img className='w-full' src={qZone2} alt="" />
+       </div>
+       <div className=''>
+       <img className='w-full' src={qZone3} alt="" />
+       </div>
+      </div>
+      </div>
+
         </div>
     );
 };

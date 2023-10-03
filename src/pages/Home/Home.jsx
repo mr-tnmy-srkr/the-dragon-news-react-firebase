@@ -9,17 +9,21 @@ import BreakingNews from "./BreakingNews";
 const Home = () => {
   return (
     <div>
-       <div className="my-3"><Header></Header></div>
-      <div className="my-3"><BreakingNews></BreakingNews></div>
+      <div className="my-3">
+        <Header></Header>
+      </div>
+      <div className="my-3">
+        <BreakingNews></BreakingNews>
+      </div>
       <Navbar></Navbar>
       <div className="grid md:grid-cols-4 gap-6">
-        <div className="bg-slate-600 ">
+        <div className="border-4 ">
           <LeftSideNav></LeftSideNav>
         </div>
-        <div className="bg-orange-300 md:col-span-2">
-            <h2 className="text-4l">News coming soon</h2>
+        <div className="border-4 md:col-span-2">
+          <h2 className="text-4l">News coming soon</h2>
         </div>
-        <div className="bg-emerald-200">
+        <div className="border-4">
           <RightSideNav></RightSideNav>
         </div>
       </div>
