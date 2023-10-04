@@ -7,7 +7,7 @@ import qZone3 from '../../../assets/images/qZone3.png'
 const RightSideNav = () => {
     return (
         <div>
-      <div className="p-4 space-y-3 mb-6">
+      <div className="p-4 pt-0 space-y-3 mb-6">
         <h2 className="text-3xl font-semibold">Login with</h2>
         <button className='btn btn-outline w-full capitalize'>
             <FaGoogle></FaGoogle>

@@ -1,23 +1,42 @@
-const leftSideCard = () => {
+import img1 from "../../../assets/images/1.png";
+import img2 from "../../../assets/images/2.png";
+import img3 from "../../../assets/images/3.png";
+
+const LeftSideCard = () => {
   return (
-    <div>
-      <div className="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="space-y-8">
+      <div className="card card-compact bg-base-100 shadow-xl">
         <figure>
-          <img
-            src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
-          />
+          <img src={img1} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
+          <p className="text-lg font-semibold">
+            Bayern Slams Authorities Over Flight Delay to Club World Cup
+          </p>
+        </div>
+      </div>{" "}
+      <div className="card card-compact bg-base-100 shadow-xl">
+        <figure>
+          <img src={img2} alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <p className="text-lg font-semibold">
+            Bayern Slams Authorities Over Flight Delay to Club World Cup
+          </p>
+        </div>
+      </div>{" "}
+      <div className="card card-compact bg-base-100 shadow-xl">
+        <figure>
+          <img src={img3} alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <p className="text-lg font-semibold">
+            Bayern Slams Authorities Over Flight Delay to Club World Cup
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default leftSideCard;
+export default LeftSideCard;
