@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import Header from "../Shared/Header/Header";
 import RightSideNav from "../Shared/RightSideNav/RightSideNav";
 import Navbar from "../Shared/Navbar/Navbar";
-import { useLoaderData ,useLocation,useParams } from "react-router-dom";
+import { useLoaderData ,useParams } from "react-router-dom";
 
 const DetailsNews = () => {
   const [data,setData]=useState([])
 
 const news = useLoaderData()
-console.log(news);
+// console.log(news);
 
 const {id} = useParams()
-console.log(id);
+// console.log(id);
 
 useEffect(()=>{
   const findNews = news.find(item=>item._id===id)
-  console.log(findNews);
+  // console.log(findNews);
   setData(findNews)
 },[id, news])
 

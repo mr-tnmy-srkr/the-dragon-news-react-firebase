@@ -33,7 +33,7 @@ const logOut = ()=>{
     return signOut(auth)
 }
 
-  useEffect(() => {
+ useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       // console.log(19, user);
       setUser(user);

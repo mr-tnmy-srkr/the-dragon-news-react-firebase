@@ -9,7 +9,7 @@ import { Dna } from "react-loader-spinner";
 const PrivateRoute = ({ children }) => {
   const { user,loading } = useContext(AuthContext);
   const location = useLocation()
-  // console.log(location.pathname);
+  console.log(location.pathname);
 
 if(loading){
     return <div className="h-[90vh] flex justify-center items-center">

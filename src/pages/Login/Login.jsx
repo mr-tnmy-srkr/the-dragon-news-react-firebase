@@ -6,7 +6,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 const Login = () => {
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
-  console.log('login page state from private route',location.state);
+  // console.log('login page state from private route',location.state);
   const navigate = useNavigate()
 
   const handleLogin = (e) => {
@@ -24,9 +24,10 @@ const Login = () => {
     const password = form.get("password");
 
     signIn(email, password)
-    
     .then(result => {
       console.log(result.user)
+
+
       //navigate after login
       navigate(location?.state ? location.state : '/')
     })

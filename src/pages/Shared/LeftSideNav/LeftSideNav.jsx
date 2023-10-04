@@ -9,11 +9,17 @@ const LeftSideNav = () => {
       .then((data) => setCategories(data));
   }, []);
   // console.log(categories);
+
+  const handleLoadCategoryNews = () => {
+    console.log("i am category");
+  };
+
   return (
     <div className="space-y-6">
       <h2>Left side</h2>
       {categories.map((category) => (
         <Link
+          onClick={()=>handleLoadCategoryNews()}
           to={`/category/${category.id}`}
           key={category.id}
           className="block ml-4 text-xl font-semibold"
