@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  console.log('login page state from private route',location.state);
+  const navigate = useNavigate()
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -20,11 +23,18 @@ const Login = () => {
     const email = form.get("email");
     const password = form.get("password");
 
-    signIn(email, password).then((result) => {
-      console.log(result.user).catch((error) => {
+    signIn(email, password)
+    
+    .then(result => {
+      console.log(result.user)
+      //navigate after login
+      navigate(location?.state ? location.state : '/')
+    })
+      .catch((error) => {
         console.error(error);
+        
       });
-    });
+    
   };
 
   return (
