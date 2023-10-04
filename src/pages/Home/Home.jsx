@@ -8,10 +8,26 @@ import RightSideNav from "../Shared/RightSideNav/RightSideNav";
 import BreakingNews from "./BreakingNews";
 import NewsCard from "./NewsCard";
 import { getProducts } from "../../utils/getProducts";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [catId, setCatId] = useState(null);
+  const [filteredNews, setFilteredNews] = useState([]);
   const news = useLoaderData();
   // console.log(news);
+
+  const handleLoadCategoryNews = (id) => {
+    // console.log("i am category",id);
+    setCatId(id);
+  };
+  useEffect(() => {
+    const filteredData = news.filter((aNews) => aNews.category_id == catId);
+    // console.log(filteredData);
+    setFilteredNews(filteredData);
+  }, [catId, news]);
+
+  // console.log(catId);
+  // console.log(filteredNews);
 
   return (
     <div>
@@ -23,17 +39,27 @@ const Home = () => {
       </div>
       <Navbar></Navbar>
       <div className="grid md:grid-cols-4 gap-6">
-        <div className="border-4 ">
-          <LeftSideNav></LeftSideNav>
+        <div className=" ">
+          <LeftSideNav
+            handleLoadCategoryNews={handleLoadCategoryNews}
+          ></LeftSideNav>
         </div>
 
-        {/* news container */}
-        <div className="border-4 md:col-span-2">
-          {news.map((aNews,idx) => (
-            <NewsCard key={idx} news={aNews}></NewsCard>
-          ))}
-        </div>
-        <div className="border-4">
+        {filteredNews.length ? (
+          <div className=" md:col-span-2">
+            {filteredNews.map((aNews, idx) => (
+              <NewsCard key={idx} news={aNews}></NewsCard>
+            ))}
+          </div>
+        ) : (
+          <div className=" md:col-span-2">
+            {news.map((aNews, idx) => (
+              <NewsCard key={idx} news={aNews}></NewsCard>
+            ))}
+          </div>
+        )}
+
+        <div className="">
           <RightSideNav></RightSideNav>
         </div>
       </div>

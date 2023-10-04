@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import leftSideCard from "./leftSideCard"
 
-const LeftSideNav = () => {
+const LeftSideNav = ({handleLoadCategoryNews}) => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     fetch("categories.json")
@@ -10,24 +11,24 @@ const LeftSideNav = () => {
   }, []);
   // console.log(categories);
 
-  const handleLoadCategoryNews = () => {
-    console.log("i am category");
-  };
-
+  
   return (
+    <>
     <div className="space-y-6">
-      <h2>Left side</h2>
+      <h2 className="text-3xl font-semibold">All Categories</h2>
       {categories.map((category) => (
-        <Link
-          onClick={()=>handleLoadCategoryNews()}
-          to={`/category/${category.id}`}
+        <div
+          onClick={()=>handleLoadCategoryNews(category.id)}
+          // to={`/category/${category.id}`}
           key={category.id}
-          className="block ml-4 text-xl font-semibold"
+          className="block ml-4 text-xl font-semibold hover:cursor-pointer"
         >
           {category.name}
-        </Link>
+        </div>
       ))}
     </div>
+<leftSideCard></leftSideCard>
+</>
   );
 };
 
