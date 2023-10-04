@@ -28,7 +28,7 @@ const {createUser} = useContext(AuthContext)
 
 //create user
 createUser(email,password)
-.then(res=>console.log(res.user))
+.then(result=>console.log(result.user))
 .catch(err=>console.error(err))
 
   };
@@ -89,6 +89,7 @@ createUser(email,password)
               <input
                 name="password"
                 type="password"
+                autoComplete="on"
                 placeholder="Enter your password"
                 className="input input-bordered "
                 required
@@ -96,9 +97,9 @@ createUser(email,password)
               <div className="flex gap-2 mt-4">
                 <input type="checkbox" name="" id="" className="w-5" required />
                 <p>
-                  Accept
-                  <a href="#" className="font-bold">
-                    Term & Conditions
+                  Accept 
+                  <a href="#" className="font-bold ml-1">
+                     Term & Conditions
                   </a>
                 </p>
               </div>
