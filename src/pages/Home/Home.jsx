@@ -7,11 +7,11 @@ import Navbar from "../Shared/Navbar/Navbar";
 import RightSideNav from "../Shared/RightSideNav/RightSideNav";
 import BreakingNews from "./BreakingNews";
 import NewsCard from "./NewsCard";
+import { getProducts } from "../../utils/getProducts";
 
 const Home = () => {
-
-const news = useLoaderData();
-// console.log(news);
+  const news = useLoaderData();
+  // console.log(news);
 
   return (
     <div>
@@ -29,7 +29,9 @@ const news = useLoaderData();
 
         {/* news container */}
         <div className="border-4 md:col-span-2">
-     { news.map(aNews =><NewsCard key={aNews.id} news={aNews}></NewsCard>)}
+          {news.map((aNews,idx) => (
+            <NewsCard key={idx} news={aNews}></NewsCard>
+          ))}
         </div>
         <div className="border-4">
           <RightSideNav></RightSideNav>
